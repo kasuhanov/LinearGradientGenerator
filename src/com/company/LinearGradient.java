@@ -42,22 +42,21 @@ public class LinearGradient {
     }
 
     static public void main(String args[]) throws Exception {
-        Rgb fromRgb = new Rgb(255, 0, 0);
-        Rgb toRgb = new Rgb(0,0, 255);
-        Rgb curRgb = fromRgb;
-        int steps = 30;
+        Rgb fromRgb = new Rgb(255, 255, 50);
+        Rgb toRgb = new Rgb(255,0, 0);
+        int steps = 10;
 
         int rStep=(toRgb.getR() - fromRgb.getR()) /steps;
         int gStep=(toRgb.getG() - fromRgb.getG()) /steps;
         int bStep=(toRgb.getB() - fromRgb.getB()) /steps;
-        System.out.println(rStep);
-        System.out.println(gStep);
-        System.out.println(bStep);
-        for (int i = 0; i < steps; i++) {
-            curRgb.setR(curRgb.getR()+rStep);
-            curRgb.setG(curRgb.getG() + gStep);
-            curRgb.setB(curRgb.getB() + bStep);
-            colorPixel(curRgb.toInt(),String.valueOf(i+1));
+
+        //colorPixel(curRgb.toInt(),String.valueOf(0));
+        for (int i =0; i <= steps; i++) {
+            colorPixel(fromRgb.toInt(),String.valueOf(i));
+            fromRgb.setR(fromRgb.getR() + rStep);
+            fromRgb.setG(fromRgb.getG() + gStep);
+            fromRgb.setB(fromRgb.getB() + bStep);
+
         }
 
     }

@@ -21,6 +21,7 @@ public class Rgb {
 
     public void setR(int r) {
         this.r = r;
+        if(r<0)this.r=0;
     }
 
     public int getG() {
@@ -29,6 +30,7 @@ public class Rgb {
 
     public void setG(int g) {
         this.g = g;
+        if(g<0)this.g=0;
     }
 
     public int getB() {
@@ -37,5 +39,6 @@ public class Rgb {
 
     public void setB(int b) {
         this.b = b;
+        if(b<0)this.b=0;
     }
 }
